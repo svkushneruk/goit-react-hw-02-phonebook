@@ -17,11 +17,7 @@ class App extends Component {
   };
 
   checkName = filterName => {
-    const arr = this.state.contacts.filter(({ name }) => name === filterName);
-    if (arr.length > 0) {
-      return true;
-    }
-    return false;
+    return this.state.contacts.some(({ name }) => name.toLowerCase() === filterName.toLowerCase());
   };
 
   deleteContact = contactId => {
